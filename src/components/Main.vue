@@ -1,25 +1,37 @@
 <template>
   <div class="box">
-    <div class="title">XX客服服务系统</div>
+    <div class="title">{{ title }}</div>
 
     <div class="botton-box">
-      <div class="botton-box__botton">
-        <div class="botton-box__text">服务窗口</div>
-      </div>
-      <div class="botton-box__botton">
-        <div class="botton-box__text">人员注册</div>
+      <div
+        class="botton-box__botton"
+        v-for="(item, index) in buttons"
+        :key="index"
+      >
+        <div class="botton-box__text">{{ item.text }}</div>
       </div>
     </div>
 
-    <div class="data">data</div>
+    <div class="time-box">
+      <div class="time-box__time">data</div>
+      <div class="time-box__time">time</div>
+    </div>
 
-    <div class="time">time</div>
+    <!-- <div class="data">data</div>
+
+    <div class="time">time</div> -->
   </div>
 </template>
 
 <script>
 export default {
   name: "Main",
+  data() {
+    return {
+      title: "XX客服服务系统",
+      buttons: [{ text: "服务窗口" }, { text: "人员注册" }],
+    };
+  },
 };
 </script>
 
@@ -73,32 +85,28 @@ export default {
     }
   }
 
-  .data {
+  .time-box {
     position: absolute;
     top: 1044px;
     left: 1525px;
-    width: 307px;
-    height: 70px;
-    font-size: 50px;
-    font-family: PingFangSC-Semibold, PingFang SC;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 70px;
-    letter-spacing: 1px;
+    right: 88px;
+    bottom: 24px;
+    display: flex;
+    flex-direction: column;
+
+    &__time {
+      font-size: 50px;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 70px;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+
   }
 
-  .time {
-    position: absolute;
-    top: 1106px;
-    left: 1568px;
-    width: 220px;
-    height: 70px;
-    font-size: 50px;
-    font-family: PingFangSC-Semibold, PingFang SC;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 70px;
-    letter-spacing: 1px;
-  }
+
 }
 </style>
