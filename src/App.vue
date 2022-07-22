@@ -1,20 +1,17 @@
 <template>
   <div id="app">
-    <Main />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Main from './components/Main.vue'
-
 export default {
-  components:{ Main },
-  name: 'App'
-}
+  name: "App",
+};
 </script>
 
 <style>
-#app{
+#app {
   position: absolute;
   top: 0;
   left: 0;
