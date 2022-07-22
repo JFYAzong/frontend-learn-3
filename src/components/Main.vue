@@ -13,8 +13,7 @@
     </div>
 
     <div class="time-box">
-      <div class="time-box__time">data</div>
-      <div class="time-box__time">time</div>
+      <div class="time-box__time">{{date}}</div>
     </div>
 
     <!-- <div class="data">data</div>
@@ -30,8 +29,18 @@ export default {
     return {
       title: "XX客服服务系统",
       buttons: [{ text: "服务窗口" }, { text: "人员注册" }],
+      date: null,
+      nowtimer: "",
     };
   },
+  mounted() {
+    this.nowtimer = setInterval(this.gettime, 1000)
+  },
+  methods: {
+    gettime(){
+      this.date = new Date().toLocaleString();
+    }
+  }
 };
 </script>
 
@@ -97,7 +106,6 @@ export default {
     &__time {
       font-size: 50px;
       font-family: PingFangSC-Semibold, PingFang SC;
-      font-weight: 600;
       color: rgba(255, 255, 255, 0.85);
       line-height: 70px;
       letter-spacing: 1px;
