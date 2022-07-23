@@ -7,14 +7,14 @@
         class="botton-box__botton"
         v-for="(item, index) in buttons"
         :key="index"
-        @click="onClickButton(index)"
+        @click="onClickButton(item)"
       >
         <div class="botton-box__text">{{ item.text }}</div>
       </div>
     </div>
 
     <div class="time-box">
-      <div class="time-box__time">{{date}}</div>
+      <div class="time-box__time">{{ date }}</div>
     </div>
 
     <!-- <div class="data">data</div>
@@ -35,18 +35,18 @@ export default {
     };
   },
   mounted() {
-    this.nowtimer = setInterval(this.gettime, 1000)
+    this.nowtimer = setInterval(this.gettime, 1000);
   },
   methods: {
-    gettime(){
+    gettime() {
       this.date = new Date().toLocaleString();
     },
-    onClickButton(index){
-      if(index = 0){
+    onClickButton(item) {
+      if (item.index == 0) {
         this.$router.push("/serve");
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -117,10 +117,6 @@ export default {
       letter-spacing: 1px;
       text-align: center;
     }
-
-
   }
-
-
 }
 </style>
