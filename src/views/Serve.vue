@@ -1,15 +1,38 @@
 <template>
-  <div class="title-box">
-    <div class="title-box__title">XX服务中心 . 访客列表</div>
+  <div class="box">
+    <div class="title-box">
+      <div class="title-box__title" @click="openServiceDialog">XX服务中心 . 访客列表</div>
+    </div>
+
+    <div class="message-box">
+      <div class="dialog-box" v-if="showServiceDialog"></div>
+    </div>
+    
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data(){
+    return{
+      showServiceDialog: false
+    }
+  },
+  methods:{
+    openServiceDialog(){
+      this.showServiceDialog = ! this.showServiceDialog
+    }
+  }
+};
 </script>
 
 <style scoped lang="scss">
-.title-box {
+.box{
+  width: 100vw;
+  height: 100vh;
+  // background-size: 100% 100%;
+
+  .title-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -30,4 +53,25 @@ export default {};
     letter-spacing: 1px;
   }
 }
+.message-box{
+  position: absolute;
+  left: 483px;
+  top: 183px;
+  right: 0;
+  bottom: 0;
+  background-color: blue;
+
+  .dialog-box{
+    position: absolute;
+    top: 160px;
+    left: 209px;
+    right: 198px;
+    bottom: 318px;
+    background-color: red;
+    z-index: 4;
+  }
+}
+  
+}
+
 </style>
