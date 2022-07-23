@@ -7,6 +7,7 @@
         class="botton-box__botton"
         v-for="(item, index) in buttons"
         :key="index"
+        @click="onClickButton(index)"
       >
         <div class="botton-box__text">{{ item.text }}</div>
       </div>
@@ -39,6 +40,11 @@ export default {
   methods: {
     gettime(){
       this.date = new Date().toLocaleString();
+    },
+    onClickButton(index){
+      if(index = 0){
+        this.$router.push("/serve");
+      }
     }
   }
 };
