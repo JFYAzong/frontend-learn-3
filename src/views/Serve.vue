@@ -8,12 +8,17 @@
 
     <div class="information">
       <div class="avatar"></div>
+      <div class="persion-box">
+        <div class="persion-box__item">姓名</div>
+        <div class="persion-box__item">身份</div>
+        <div class="persion-box__item">政治面貌</div>
+        <div class="persion-box__item">签到日期</div>
+        <div class="persion-box__item">签到时间</div>
+      </div>
     </div>
 
     <div class="message-box">
-      <div class="dialog-box" v-if="showServiceDialog">
-      
-      </div>
+      <div class="dialog-box" v-if="showServiceDialog"></div>
     </div>
   </div>
 </template>
@@ -66,7 +71,7 @@ export default {
     left: 0;
     right: 1437px;
     bottom: 0;
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
 
     .avatar {
       position: absolute;
@@ -77,6 +82,26 @@ export default {
       background: #d8d8d8;
       border: 1px solid #979797;
       border-radius: 50%;
+    }
+
+    .persion-box {
+      position: absolute;
+      top: 230px;
+      left: 86px;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+
+      &__item {
+        font-size: 40px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: rgba(145, 141, 141, 0.85);
+        line-height: 56px;
+        letter-spacing: 1px;
+        margin: 0 0 95px;
+      }
     }
   }
   .message-box {
