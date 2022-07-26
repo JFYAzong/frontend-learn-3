@@ -18,8 +18,16 @@
     </div>
 
     <div class="message-box">
-      <div class="dialog-box" v-if="showServiceDialog"></div>
+      <div class="message-box__bar">
+        <div class="message-box__bar__time">签到时间</div>
+        <div class="message-box__bar__name">姓名</div>
+        <div class="message-box__bar__time">联系电话</div>
+        <div class="message-box__bar__time">来访明细</div>
+        <div class="message-box__bar__name">评价</div>
+      </div>
     </div>
+
+    <div class="dialog-box" v-if="showServiceDialog"></div>
   </div>
 </template>
 
@@ -110,17 +118,48 @@ export default {
     top: 183px;
     right: 0;
     bottom: 0;
-    background-color: blue;
+    background: #ffffff;
 
-    .dialog-box {
+    &__bar {
       position: absolute;
-      top: 160px;
-      left: 209px;
-      right: 198px;
-      bottom: 318px;
-      background-color: red;
-      z-index: 4;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 917px;
+      background: #d8d8d8;
+      display: flex;
+
+      &__time {
+        font-size: 40px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.85);
+        line-height: 56px;
+        letter-spacing: 1px;
+        flex-grow: 2;
+        text-align: center;
+      }
+
+      &__name {
+        font-size: 40px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.85);
+        line-height: 56px;
+        letter-spacing: 1px;
+        flex-grow: 1;
+        text-align: center;
+      }
     }
+  }
+  .dialog-box {
+    position: absolute;
+    top: 160px;
+    left: 209px;
+    right: 198px;
+    bottom: 318px;
+    background-color: red;
+    z-index: 4;
   }
 }
 </style>
