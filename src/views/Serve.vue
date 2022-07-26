@@ -19,11 +19,19 @@
 
     <div class="message-box">
       <div class="message-box__bar">
-        <div class="message-box__bar__time">签到时间</div>
-        <div class="message-box__bar__name">姓名</div>
-        <div class="message-box__bar__time">联系电话</div>
-        <div class="message-box__bar__time">来访明细</div>
-        <div class="message-box__bar__name">评价</div>
+        <div class="message-box__bar__item2">签到时间</div>
+        <div class="message-box__bar__item1">姓名</div>
+        <div class="message-box__bar__item2">联系电话</div>
+        <div class="message-box__bar__item2">来访明细</div>
+        <div class="message-box__bar__item1">评价</div>
+      </div>
+
+      <div class="message-box__detail"></div>
+
+      <div class="botton-box">
+        <div class="botton-box__evaluate">
+          <div class="botton-box__evaluate__text">服务评价</div>
+        </div>
       </div>
     </div>
 
@@ -129,7 +137,7 @@ export default {
       background: #d8d8d8;
       display: flex;
 
-      &__time {
+      &__item2 {
         font-size: 40px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
@@ -138,9 +146,10 @@ export default {
         letter-spacing: 1px;
         flex-grow: 2;
         text-align: center;
+        margin: 22px;
       }
 
-      &__name {
+      &__item1 {
         font-size: 40px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
@@ -149,6 +158,49 @@ export default {
         letter-spacing: 1px;
         flex-grow: 1;
         text-align: center;
+        margin: 22px;
+      }
+    }
+
+    &__detail {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      right: 0;
+      bottom: 759px;
+      background: #ffffff;
+      border: 1px solid #979797;
+    }
+
+    .botton-box {
+      position: absolute;
+      top: 887px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #d8d8d8;
+      border: 1px solid #979797;
+
+      &__evaluate {
+        position: absolute;
+        top: 0;
+        left: 827px;
+        right: 301px;
+        bottom: 0;
+        background: #efae8a;
+
+        &__text {
+          position: absolute;
+          top: 37px;
+          bottom: 37px;
+          text-align: center;
+          font-size: 40px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.85);
+          line-height: 56px;
+          letter-spacing: 1px;
+        }
       }
     }
   }
