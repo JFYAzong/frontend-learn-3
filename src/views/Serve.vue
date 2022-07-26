@@ -32,6 +32,10 @@
         <div class="botton-box__evaluate">
           <div class="botton-box__evaluate__text">服务评价</div>
         </div>
+
+        <div class="botton-box__choose">
+          <div class="botton-box__choose__text">选择服务</div>
+        </div>
       </div>
     </div>
 
@@ -192,6 +196,32 @@ export default {
         &__text {
           position: absolute;
           top: 37px;
+          left: 0;
+          right: 0;
+          bottom: 37px;
+          text-align: center;
+          font-size: 40px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.85);
+          line-height: 56px;
+          letter-spacing: 1px;
+        }
+      }
+
+      &__choose{
+        position: absolute;
+        top: 0;
+        left: 1136px;
+        right: 0;
+        bottom: 0;
+        background: #77B3E1;
+
+        &__text{
+          position: absolute;
+          top: 37px;
+          left: 0;
+          right: 0;
           bottom: 37px;
           text-align: center;
           font-size: 40px;
