@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="title-box">
-      <div class="title-box__title" @click="openServiceDialog">
+      <div class="title-box__title" >
         XX服务中心 . 访客列表
       </div>
     </div>
@@ -29,8 +29,8 @@
       <div class="message-box__detail"></div>
 
       <div class="botton-box">
-        <div class="botton-box__evaluate">
-          <div class="botton-box__evaluate__text">服务评价</div>
+        <div class="botton-box__evaluate" @click="openServiceDialog">
+          <div class="botton-box__evaluate__text" >服务评价</div>
         </div>
 
         <div class="botton-box__choose">
@@ -189,9 +189,10 @@ export default {
         position: absolute;
         top: 0;
         left: 827px;
-        right: 301px;
+        right: 299px;
         bottom: 0;
         background: #efae8a;
+        cursor: pointer;
 
         &__text {
           position: absolute;
@@ -216,6 +217,7 @@ export default {
         right: 0;
         bottom: 0;
         background: #77B3E1;
+        cursor: pointer;
 
         &__text{
           position: absolute;
