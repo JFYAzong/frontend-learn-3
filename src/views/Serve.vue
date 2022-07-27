@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <div class="title-box">
-      <div class="title-box__title" >
-        XX服务中心 . 访客列表
-      </div>
+      <div class="title-box__title">XX服务中心 . 访客列表</div>
     </div>
 
     <div class="information">
@@ -30,7 +28,7 @@
 
       <div class="botton-box">
         <div class="botton-box__evaluate" @click="openServiceDialog">
-          <div class="botton-box__evaluate__text" >服务评价</div>
+          <div class="botton-box__evaluate__text">服务评价</div>
         </div>
 
         <div class="botton-box__choose">
@@ -39,7 +37,17 @@
       </div>
     </div>
 
-    <div class="dialog-box" v-if="showServiceDialog"></div>
+    <div
+      class="dialog-mask"
+      v-if="showServiceDialog"
+      @click="closeServiceDialog"
+    >
+      <div class="dialog-box" @click.stop>
+        <div class="dialog-box__consult">
+          <div class="dialog-box__consult__text">办事咨询</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -52,7 +60,10 @@ export default {
   },
   methods: {
     openServiceDialog() {
-      this.showServiceDialog = !this.showServiceDialog;
+      this.showServiceDialog = true;
+    },
+    closeServiceDialog() {
+      this.showServiceDialog = false;
     },
   },
 };
@@ -210,16 +221,16 @@ export default {
         }
       }
 
-      &__choose{
+      &__choose {
         position: absolute;
         top: 0;
         left: 1136px;
         right: 0;
         bottom: 0;
-        background: #77B3E1;
+        background: #77b3e1;
         cursor: pointer;
 
-        &__text{
+        &__text {
           position: absolute;
           top: 37px;
           left: 0;
@@ -236,14 +247,48 @@ export default {
       }
     }
   }
-  .dialog-box {
+
+  .dialog-mask {
     position: absolute;
-    top: 160px;
-    left: 209px;
-    right: 198px;
-    bottom: 318px;
-    background-color: red;
-    z-index: 4;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+
+    .dialog-box {
+      position: absolute;
+      top: 344px;
+      left: 634px;
+      right: 256px;
+      bottom: 317px;
+      background: #e4e4e4;
+      box-shadow: 3px 5px 11px 0px rgba(0, 0, 0, 0.5);
+      border-radius: 21px;
+      z-index: 4;
+
+      &__consult {
+        position: absolute;
+        top: 93px;
+        left: 33px;
+        right: 793px;
+        bottom: 339px;
+        background: #fdfdfd;
+        border-radius: 7px;
+
+        &__text {
+          position: absolute;
+          top: 33px;
+          // left: 40px;
+          // right: 40px;
+          bottom: 32px;
+          text-align: center;
+          font-size: 30px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: rgba(111, 111, 111, 0.85);
+          line-height: 42px;
+        }
+      }
+    }
   }
 }
 </style>
