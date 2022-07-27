@@ -44,8 +44,22 @@
     >
       <div class="dialog-box" @click.stop>
         <div class="dialog-box__consult">
-          <div class="dialog-box__consult__text">办事咨询</div>
+          <div class="dialog-box__text">办事咨询</div>
         </div>
+
+        <div class="dialog-box__visit">
+          <div class="dialog-box__text">参观</div>
+        </div>
+
+        <div class="dialog-box__meeting">
+          <div class="dialog-box__text">参加会议</div>
+        </div>
+
+        <div class="dialog-box__activity">
+          <div class="dialog-box__text">参加活动</div>
+        </div>
+
+        <div class="dialog-box__remark"></div>
       </div>
     </div>
   </div>
@@ -273,20 +287,60 @@ export default {
         bottom: 339px;
         background: #fdfdfd;
         border-radius: 7px;
+      }
 
-        &__text {
-          position: absolute;
-          top: 33px;
-          // left: 40px;
-          // right: 40px;
-          bottom: 32px;
-          text-align: center;
-          font-size: 30px;
-          font-family: PingFangSC-Medium, PingFang SC;
-          font-weight: 500;
-          color: rgba(111, 111, 111, 0.85);
-          line-height: 42px;
-        }
+      &__visit {
+        position: absolute;
+        top: 93px;
+        left: 274px;
+        right: 552px;
+        bottom: 339px;
+        background: #fdfdfd;
+        border-radius: 7px;
+      }
+
+      &__meeting {
+        position: absolute;
+        top: 236px;
+        left: 33px;
+        right: 793px;
+        bottom: 196px;
+        background: #fdfdfd;
+        border-radius: 7px;
+      }
+
+      &__activity {
+        position: absolute;
+        top: 236px;
+        left: 274px;
+        right: 552px;
+        bottom: 196px;
+        background: #fdfdfd;
+        border-radius: 7px;
+      }
+
+      &__text {
+        position: absolute;
+        top: 33px;
+        left: 0px;
+        right: 0px;
+        bottom: 32px;
+        text-align: center;
+        font-size: 30px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: rgba(111, 111, 111, 0.85);
+        line-height: 42px;
+      }
+
+      &__remark {
+        position: absolute;
+        top: 93px;
+        left: 530px;
+        right: 54px;
+        bottom: 185px;
+        background: #ffffff;
+        border: 1px solid #979797;
       }
     }
   }
