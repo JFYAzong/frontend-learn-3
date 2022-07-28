@@ -27,11 +27,11 @@
       <div class="message-box__detail"></div>
 
       <div class="botton-box">
-        <div class="botton-box__evaluate" @click="openServiceDialog">
-          <div class="botton-box__evaluate__text">服务评价</div>
+        <div class="botton-box__evaluate">
+          <div class="botton-box__evaluate__text" @click="openEvaluateDialog">服务评价</div>
         </div>
 
-        <div class="botton-box__choose">
+        <div class="botton-box__choose" @click="openServiceDialog">
           <div class="botton-box__choose__text">选择服务</div>
         </div>
       </div>
@@ -70,6 +70,14 @@
         </div>
       </div>
     </div>
+
+    <div
+      class="dialog-mask"
+      v-if="showEvaluateDialog"
+      @click="closeEvaluateDialog"
+    >
+      <div class="dialog-evaluate"></div>
+    </div>
   </div>
 </template>
 
@@ -78,6 +86,7 @@ export default {
   data() {
     return {
       showServiceDialog: false,
+      showEvaluateDialog: false
     };
   },
   methods: {
@@ -86,6 +95,12 @@ export default {
     },
     closeServiceDialog() {
       this.showServiceDialog = false;
+    },
+    openEvaluateDialog() {
+      this.showEvaluateDialog = true;
+    },
+    closeEvaluateDialog() {
+      this.showEvaluateDialog = false;
     },
   },
 };
@@ -118,6 +133,7 @@ export default {
       letter-spacing: 1px;
     }
   }
+
   .information {
     position: absolute;
     top: 183px;
@@ -157,6 +173,7 @@ export default {
       }
     }
   }
+
   .message-box {
     position: absolute;
     left: 483px;
@@ -398,6 +415,18 @@ export default {
           line-height: 42px;
         }
       }
+    }
+
+    .dialog-evaluate {
+      position: absolute;
+      top: 343px;
+      left: 692px;
+      right: 198px;
+      bottom: 318px;
+      background: #ffffff;
+      box-shadow: 3px 5px 11px 0px rgba(0, 0, 0, 0.5);
+      border-radius: 21px;
+      z-index: 4;
     }
   }
 }
