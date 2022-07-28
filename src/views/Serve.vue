@@ -28,7 +28,9 @@
 
       <div class="botton-box">
         <div class="botton-box__evaluate">
-          <div class="botton-box__evaluate__text" @click="openEvaluateDialog">服务评价</div>
+          <div class="botton-box__evaluate__text" @click="openEvaluateDialog">
+            服务评价
+          </div>
         </div>
 
         <div class="botton-box__choose" @click="openServiceDialog">
@@ -76,7 +78,11 @@
       v-if="showEvaluateDialog"
       @click="closeEvaluateDialog"
     >
-      <div class="dialog-evaluate"></div>
+      <div class="dialog-evaluate">
+        <div class="dialog-evaluate__good"></div>
+        <div class="dialog-evaluate__general"></div>
+        <div class="dialog-evaluate__bad"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -86,7 +92,7 @@ export default {
   data() {
     return {
       showServiceDialog: false,
-      showEvaluateDialog: false
+      showEvaluateDialog: false,
     };
   },
   methods: {
@@ -427,6 +433,36 @@ export default {
       box-shadow: 3px 5px 11px 0px rgba(0, 0, 0, 0.5);
       border-radius: 21px;
       z-index: 4;
+
+      &__good {
+        position: absolute;
+        top: 120px;
+        left: 107px;
+        right: 690px;
+        bottom: 186px;
+        background: url("../assets/好.png");
+        background-size: 100% 100%;
+      }
+
+      &__general {
+        position: absolute;
+        top: 120px;
+        left: 399px;
+        right: 398px;
+        bottom: 186px;
+        background: url("../assets/中.png");
+        background-size: 100% 100%;
+      }
+
+      &__bad {
+        position: absolute;
+        top: 120px;
+        left: 691px;
+        right: 106px;
+        bottom: 186px;
+        background: url("../assets/差.png");
+        background-size: 100% 100%;
+      }
     }
   }
 }
