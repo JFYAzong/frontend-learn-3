@@ -60,6 +60,14 @@
         </div>
 
         <div class="dialog-box__remark"></div>
+
+        <div class="botton-confirm">
+          <div class="botton-confirm__text">确认</div>
+        </div>
+
+        <div class="botton-cancel" @click="closeServiceDialog">
+          <div class="botton-cancel__text">取消</div>
+        </div>
       </div>
     </div>
   </div>
@@ -341,6 +349,54 @@ export default {
         bottom: 185px;
         background: #ffffff;
         border: 1px solid #979797;
+      }
+
+      .botton-confirm {
+        position: absolute;
+        top: 431px;
+        left: 326px;
+        right: 534px;
+        bottom: 35px;
+        background: #77b3e1;
+        border-radius: 21px;
+        cursor: pointer;
+
+        &__text {
+          position: absolute;
+          top: 16px;
+          bottom: 16px;
+          left: 54px;
+          right: 54px;
+          font-size: 30px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.85);
+          line-height: 42px;
+        }
+      }
+
+      .botton-cancel {
+        position: absolute;
+        top: 430px;
+        left: 533px;
+        right: 327px;
+        bottom: 36px;
+        background: #cbc6c3;
+        border-radius: 21px;
+        cursor: pointer;
+
+        &__text {
+          position: absolute;
+          top: 15px;
+          bottom: 15px;
+          left: 54px;
+          right: 54px;
+          font-size: 30px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.85);
+          line-height: 42px;
+        }
       }
     }
   }
