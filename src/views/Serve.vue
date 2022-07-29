@@ -24,8 +24,9 @@
         <div class="message-box__bar__item1">评价</div>
       </div>
 
-      <div class="message-box__detail">
-        
+      <div class="detail-box">
+        <div class="detail-box__detail">
+      </div>
       </div>
 
       <div class="botton-box">
@@ -224,7 +225,14 @@ export default {
       }
     }
 
-    &__detail {
+    .detail-box{
+      position: absolute;
+      top: 100px;
+      left: 0;
+      height: 787px;
+      width: 1437px;
+
+      &__detail {
       position: absolute;
       top: 100px;
       left: 0;
@@ -233,7 +241,8 @@ export default {
       background: #ffffff;
       border: 1px solid #979797;
     }
-
+    }
+    
     .botton-box {
       position: absolute;
       top: 887px;
@@ -467,6 +476,6 @@ export default {
       }
     }
   }
-  
+
 }
 </style>
