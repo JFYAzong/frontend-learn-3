@@ -24,7 +24,9 @@
         <div class="message-box__bar__item1">评价</div>
       </div>
 
-      <div class="message-box__detail"></div>
+      <div class="message-box__detail">
+        
+      </div>
 
       <div class="botton-box">
         <div class="botton-box__evaluate">
@@ -465,5 +467,6 @@ export default {
       }
     }
   }
+  
 }
 </style>
