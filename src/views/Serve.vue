@@ -239,7 +239,7 @@ export default {
       right: 0;
       bottom: 759px;
       background: #ffffff;
-      border: 1px solid #979797;
+      border-bottom: 1px solid #979797;
     }
     }
     
