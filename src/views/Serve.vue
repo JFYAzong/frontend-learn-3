@@ -25,8 +25,19 @@
       </div>
 
       <div class="detail-box">
-        <div class="detail-box__detail">
-      </div>
+        <div
+          class="detail-box__detail"
+          v-for="(item, index) in visitorList"
+          :key="index"
+        >
+          <div class="detail-box__detail__cell2">
+            {{ item.date }}<br />{{ item.time }}
+          </div>
+          <div class="detail-box__detail__cell1">{{ item.name }}</div>
+          <div class="detail-box__detail__cell2">{{ item.phone }}</div>
+          <div class="detail-box__detail__cell2">{{ item.detail }}</div>
+          <div class="detail-box__detail__cell1">{{ item.evaluation }}</div>
+        </div>
       </div>
 
       <div class="botton-box">
@@ -96,6 +107,49 @@ export default {
     return {
       showServiceDialog: false,
       showEvaluateDialog: false,
+      user: {},
+      visitorList: [
+        {
+          name: "张三",
+          date: "2022-10-03",
+          time: "10:10",
+          phone: "133",
+          detail: "test",
+          evaluation: "good",
+        },
+        {
+          name: "张4",
+          date: "2022-10-03",
+          time: "10:10",
+          phone: "133",
+          detail: "test",
+          evaluation: "good",
+        },
+        {
+          name: "张5",
+          date: "2022-10-03",
+          time: "10:10",
+          phone: "133",
+          detail: "test",
+          evaluation: "good",
+        },
+        {
+          name: "张6",
+          date: "2022-10-03",
+          time: "10:10",
+          phone: "133",
+          detail: "test",
+          evaluation: "good",
+        },
+        {
+          name: "张7",
+          date: "2022-10-03",
+          time: "10:10",
+          phone: "133",
+          detail: "test",
+          evaluation: "good",
+        },
+      ],
     };
   },
   methods: {
@@ -225,24 +279,48 @@ export default {
       }
     }
 
-    .detail-box{
+    .detail-box {
       position: absolute;
       top: 100px;
       left: 0;
       height: 787px;
       width: 1437px;
+      overflow-y: auto;
 
       &__detail {
-      position: absolute;
-      top: 100px;
-      left: 0;
-      right: 0;
-      bottom: 759px;
-      background: #ffffff;
-      border-bottom: 1px solid #979797;
+        top: 100px;
+        left: 0;
+        right: 0;
+        bottom: 759px;
+        background: #ffffff;
+        border-bottom: 1px solid #979797;
+        display: flex;
+
+        &__cell1 {
+          font-size: 35px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: rgba(0, 0, 0, 0.85);
+          line-height: 49px;
+          letter-spacing: 1px;
+          flex-grow: 1;
+          text-align: center;
+          margin: 22px;
+        }
+        &__cell2 {
+          font-size: 35px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: rgba(0, 0, 0, 0.85);
+          line-height: 49px;
+          letter-spacing: 1px;
+          flex-grow: 2;
+          text-align: center;
+          margin: 22px;
+        }
+      }
     }
-    }
-    
+
     .botton-box {
       position: absolute;
       top: 887px;
@@ -476,6 +554,5 @@ export default {
       }
     }
   }
-
 }
 </style>
