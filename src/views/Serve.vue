@@ -7,11 +7,26 @@
     <div class="information">
       <div class="avatar"></div>
       <div class="persion-box">
-        <div class="persion-box__item">姓名</div>
-        <div class="persion-box__item">身份</div>
-        <div class="persion-box__item">政治面貌</div>
-        <div class="persion-box__item">签到日期</div>
-        <div class="persion-box__item">签到时间</div>
+        <div class="persion-box__item">
+          姓名
+          <div class="persion-box__item__text">{{ user.name }}</div>
+        </div>
+        <div class="persion-box__item">
+          身份
+          <div class="persion-box__item__text">{{ user.identity }}</div>
+        </div>
+        <div class="persion-box__item">
+          政治面貌
+          <div class="persion-box__item__text">{{ user.politics }}</div>
+        </div>
+        <div class="persion-box__item">
+          签到日期
+          <div class="persion-box__item__text">{{ user.date }}</div>
+        </div>
+        <div class="persion-box__item">
+          签到时间
+          <div class="persion-box__item__text">{{ user.time }}</div>
+        </div>
       </div>
     </div>
 
@@ -29,6 +44,7 @@
           class="detail-box__detail"
           v-for="(item, index) in visitorList"
           :key="index"
+          @click="user = item"
         >
           <div class="detail-box__detail__cell2">
             {{ item.date }}<br />{{ item.time }}
@@ -116,6 +132,8 @@ export default {
           phone: "133",
           detail: "test",
           evaluation: "good",
+          identity: "干部",
+          politics: "党员",
         },
         {
           name: "张4",
@@ -124,6 +142,8 @@ export default {
           phone: "133",
           detail: "test",
           evaluation: "good",
+          identity: "干部",
+          politics: "党员",
         },
         {
           name: "张5",
@@ -132,6 +152,8 @@ export default {
           phone: "133",
           detail: "test",
           evaluation: "good",
+          identity: "干部",
+          politics: "党员",
         },
         {
           name: "张6",
@@ -140,6 +162,8 @@ export default {
           phone: "133",
           detail: "test",
           evaluation: "good",
+          identity: "干部",
+          politics: "党员",
         },
         {
           name: "张7",
@@ -148,6 +172,8 @@ export default {
           phone: "133",
           detail: "test",
           evaluation: "good",
+          identity: "干部",
+          politics: "党员",
         },
         {
           name: "张8",
@@ -156,6 +182,8 @@ export default {
           phone: "133",
           detail: "test",
           evaluation: "good",
+          identity: "干部",
+          politics: "党员",
         },
       ],
     };
@@ -234,6 +262,7 @@ export default {
       flex-direction: column;
 
       &__item {
+        position: relative;
         font-size: 40px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
@@ -241,6 +270,15 @@ export default {
         line-height: 56px;
         letter-spacing: 1px;
         margin: 0 0 95px;
+        &__text {
+          top: 75px;
+          font-size: 40px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: rgba(0, 0, 0, 0.85);
+          line-height: 56px;
+          letter-spacing: 1px;
+        }
       }
     }
   }
